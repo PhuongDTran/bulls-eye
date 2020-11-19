@@ -88,6 +88,13 @@ class ViewController: UIViewController {
         _score = 0
         _round = 0
         startNewRound()
+        
+        let transition = CATransition()
+        transition.type = CATransitionType.fade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(
+            name: CAMediaTimingFunctionName.easeOut)
+        view.layer.add(transition, forKey: nil)
     }
     func startNewRound() {
         _targetValue = Int.random(in: 1...100)
